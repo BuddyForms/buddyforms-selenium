@@ -315,6 +315,39 @@
     "id": "1a6a8bfd-81d6-4c78-8c40-cfae07b6d557",
     "name": "basic notification",
     "commands": [{
+      "id": "530b2d56-4811-4201-b982-ff5c278ab591",
+      "comment": "",
+      "command": "open",
+      "target": "http://buddyforms.local:4007/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a73d5ea3-7e3d-40b2-8407-72ad620392a0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Delete all messages",
+      "targets": [
+        ["linkText=Delete all messages", "linkText"],
+        ["css=li:nth-child(3) > a", "css:finder"],
+        ["xpath=(//a[contains(@href, '#')])[4]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Delete all messages')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "60d32a23-3d50-4ee9-83ad-b7b5e4afaabf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.modal-dialog:nth-child(2) .btn-danger",
+      "targets": [
+        ["css=.modal-dialog:nth-child(2) .btn-danger", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='confirm-delete-all']/div[2]/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Delete all messages')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
       "id": "17f05421-8aec-44c4-b557-1ada8b05b156",
       "comment": "",
       "command": "open",
@@ -570,6 +603,144 @@
         ["xpath=//a[contains(.,'Form Submission Notification')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "66ef1bf5-a897-4330-99fe-1861c1579b48",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Preview Form",
+      "targets": [
+        ["linkText=Preview Form", "linkText"],
+        ["css=.button-large:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Preview Form')]", "xpath:link"],
+        ["xpath=//div[@id='frontend-actions']/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://buddyforms.local/?page_id=22&preview=true&form_slug=test-post-notification-3']", "xpath:href"],
+        ["xpath=//div[4]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Preview Form')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win1173",
+      "windowTimeout": 2000
+    }, {
+      "id": "a6b8372c-b7b1-4552-8594-0a8175fff836",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win1173}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8757329f-f55f-4405-aa58-ec41e2cddff5",
+      "comment": "",
+      "command": "click",
+      "target": "id=buddyforms_form_title",
+      "targets": [
+        ["id=buddyforms_form_title", "id"],
+        ["name=buddyforms_form_title", "name"],
+        ["css=#buddyforms_form_title", "css:finder"],
+        ["xpath=//input[@id='buddyforms_form_title']", "xpath:attributes"],
+        ["xpath=//form[@id='buddyforms_form_test-post-notification-3']/fieldset/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "77a6ba4c-f755-4b0e-8389-1e429ba960b3",
+      "comment": "",
+      "command": "type",
+      "target": "id=buddyforms_form_title",
+      "targets": [
+        ["id=buddyforms_form_title", "id"],
+        ["name=buddyforms_form_title", "name"],
+        ["css=#buddyforms_form_title", "css:finder"],
+        ["xpath=//input[@id='buddyforms_form_title']", "xpath:attributes"],
+        ["xpath=//form[@id='buddyforms_form_test-post-notification-3']/fieldset/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title"
+    }, {
+      "id": "0a9f304b-78f6-470c-8a92-e3bdb22bffaa",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=0",
+      "targets": [
+        ["index=0"]
+      ],
+      "value": ""
+    }, {
+      "id": "aea6b823-9321-4fe2-bf31-991478ce94fd",
+      "comment": "",
+      "command": "click",
+      "target": "css=html",
+      "targets": [
+        ["css=html", "css:finder"],
+        ["xpath=//html", "xpath:position"],
+        ["xpath=//html[contains(.,'\n')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c92914bf-7bd3-41ed-b731-a0aecd781cbe",
+      "comment": "",
+      "command": "editContent",
+      "target": "id=tinymce",
+      "targets": [
+        ["id=tinymce", "id"],
+        ["css=#tinymce", "css:finder"],
+        ["xpath=//body[@id='tinymce']", "xpath:attributes"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'test content')]", "xpath:innerText"]
+      ],
+      "value": "<p>test content</p>"
+    }, {
+      "id": "4b0ed494-4742-4f3d-8165-091837e791ee",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "relative=parent",
+      "targets": [
+        ["relative=parent"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a66da60-8568-4094-8f27-3867d91b9025",
+      "comment": "",
+      "command": "click",
+      "target": "name=submitted",
+      "targets": [
+        ["id=test-post-notification-6", "id"],
+        ["name=submitted", "name"],
+        ["css=#test-post-notification-6", "css:finder"],
+        ["xpath=//button[@id='test-post-notification-6']", "xpath:attributes"],
+        ["xpath=//form[@id='buddyforms_form_test-post-notification-6']/fieldset/div[6]/button", "xpath:idRelative"],
+        ["xpath=//fieldset/div[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa23d95c-0fe6-47ea-9ed6-37aaed245531",
+      "comment": "",
+      "command": "open",
+      "target": "http://buddyforms.local:4007/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "04c2c3ec-bdea-4826-a557-054fea2c2d8e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(1) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(1) > td:nth-child(2)", "css:finder"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'test title')]", "xpath:innerText"]
+      ],
+      "value": "test title"
+    }, {
+      "id": "ba63552b-14a1-4934-bbae-3c12e2aaf01c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(2)", "css:finder"],
+        ["xpath=//tr[2]/td[2]", "xpath:position"]
+      ],
+      "value": "test content"
     }]
   }],
   "suites": [{
@@ -585,7 +756,7 @@
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": []
+    "tests": ["1a6a8bfd-81d6-4c78-8c40-cfae07b6d557"]
   }, {
     "id": "19b87b16-bc43-4e6b-99a9-da63c537ac9f",
     "name": "Component Wizard",
