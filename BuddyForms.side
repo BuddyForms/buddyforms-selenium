@@ -2,7 +2,7 @@
   "id": "8cd1efdc-73eb-4ea3-85e7-8e1c08170df6",
   "version": "2.0",
   "name": "BuddyForms",
-  "url": "http://buddyforms.local/wp-admin",
+  "url": "https://buddyforms-premium.appscidentally.com/wp-admin",
   "tests": [{
     "id": "4d50b2ef-7be1-41be-87ab-b4e431c99702",
     "name": "Open local site",
@@ -657,15 +657,6 @@
       ],
       "value": "test title"
     }, {
-      "id": "0a9f304b-78f6-470c-8a92-e3bdb22bffaa",
-      "comment": "",
-      "command": "selectFrame",
-      "target": "index=0",
-      "targets": [
-        ["index=0"]
-      ],
-      "value": ""
-    }, {
       "id": "aea6b823-9321-4fe2-bf31-991478ce94fd",
       "comment": "",
       "command": "click",
@@ -677,25 +668,42 @@
       ],
       "value": ""
     }, {
-      "id": "c92914bf-7bd3-41ed-b731-a0aecd781cbe",
+      "id": "7b8ca5dc-0355-4e3b-ac20-4898f58be07b",
       "comment": "",
-      "command": "editContent",
-      "target": "id=tinymce",
+      "command": "click",
+      "target": "id=buddyforms_form_content",
       "targets": [
-        ["id=tinymce", "id"],
-        ["css=#tinymce", "css:finder"],
-        ["xpath=//body[@id='tinymce']", "xpath:attributes"],
-        ["xpath=//body", "xpath:position"],
-        ["xpath=//body[contains(.,'test content')]", "xpath:innerText"]
+        ["id=buddyforms_form_content", "id"],
+        ["name=buddyforms_form_content", "name"],
+        ["css=#buddyforms_form_content", "css:finder"],
+        ["xpath=//textarea[@id='buddyforms_form_content']", "xpath:attributes"],
+        ["xpath=//div[@id='wp-buddyforms_form_content-editor-container']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
       ],
-      "value": "<p>test content</p>"
+      "value": ""
     }, {
-      "id": "4b0ed494-4742-4f3d-8165-091837e791ee",
+      "id": "f3ab6892-6f5f-4022-9a61-8093097cc6e4",
       "comment": "",
-      "command": "selectFrame",
-      "target": "relative=parent",
+      "command": "type",
+      "target": "id=buddyforms_form_content",
       "targets": [
-        ["relative=parent"]
+        ["id=buddyforms_form_content", "id"],
+        ["name=buddyforms_form_content", "name"],
+        ["css=#buddyforms_form_content", "css:finder"],
+        ["xpath=//textarea[@id='buddyforms_form_content']", "xpath:attributes"],
+        ["xpath=//div[@id='wp-buddyforms_form_content-editor-container']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "sdfdsfdsfdsf"
+    }, {
+      "id": "43fe8f11-9e60-4015-a672-b956ea7f5595",
+      "comment": "",
+      "command": "click",
+      "target": "css=#content > .wrap",
+      "targets": [
+        ["css=#content > .wrap", "css:finder"],
+        ["xpath=//div[@id='content']/div", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div", "xpath:position"]
       ],
       "value": ""
     }, {
@@ -721,26 +729,1017 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "ae1b6a33-3577-41d1-90a5-a8ccf8738009",
+      "comment": "",
+      "command": "click",
+      "target": "css=.subject",
+      "targets": [
+        ["css=.subject", "css:finder"],
+        ["xpath=//div[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Form Submission Notification')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
       "id": "04c2c3ec-bdea-4826-a557-054fea2c2d8e",
       "comment": "",
       "command": "assertText",
-      "target": "css=tr:nth-child(1) > td:nth-child(2)",
+      "target": "css=td > .ng-binding",
       "targets": [
-        ["css=tr:nth-child(1) > td:nth-child(2)", "css:finder"],
-        ["xpath=//td[2]", "xpath:position"],
-        ["xpath=//td[contains(.,'test title')]", "xpath:innerText"]
+        ["css=td > .ng-binding", "css:finder"],
+        ["xpath=//strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Form Submission Notification')]", "xpath:innerText"]
       ],
-      "value": "test title"
+      "value": "Form Submission Notification"
+    }, {
+      "id": "8a9ea68a-1ce2-4da1-ad57-7ec00a7a741f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Plain text",
+      "targets": [
+        ["linkText=Plain text", "linkText"],
+        ["css=.active > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Plain text')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#preview-plain')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Plain text')]", "xpath:innerText"]
+      ],
+      "value": ""
     }, {
       "id": "ba63552b-14a1-4934-bbae-3c12e2aaf01c",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=preview-plain",
+      "targets": [
+        ["id=preview-plain", "id"],
+        ["css=#preview-plain", "css:finder"],
+        ["xpath=//div[@id='preview-plain']", "xpath:attributes"],
+        ["xpath=//div[2]/div[2]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "<html><head></head><body><table rules=\"all\" style=\"border-color: #666;\" cellpadding=\"10\"><tr ><td><strong>Title</strong> </td><td>test title</td></tr><tr style='background: #eee;'><td><strong>Content</strong> </td><td><p>sdfdsfdsfdsf</p><br />\\n</td></tr></table></body></html>"
+    }]
+  }, {
+    "id": "b0317870-7cec-489e-a0a0-a90e14113e13",
+    "name": "post form - basic",
+    "commands": [{
+      "id": "3dd0956c-8343-4d32-8ab0-0e3aa801e875",
+      "comment": "",
+      "command": "open",
+      "target": "http://buddyforms.local/wp-admin/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c2a222aa-7ba6-4fe7-a5f4-eb469b8d1a50",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x1361",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "73450812-5a00-4f9d-8408-45bcb4113501",
+      "comment": "",
+      "command": "click",
+      "target": "css=.menu-icon-buddyforms > .wp-menu-name",
+      "targets": [
+        ["css=.menu-icon-buddyforms > .wp-menu-name", "css:finder"],
+        ["xpath=//li[@id='menu-posts-buddyforms']/a/div[3]", "xpath:idRelative"],
+        ["xpath=//li[7]/a/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d932a074-c4c7-4426-967f-33d67a686a09",
+      "comment": "",
+      "command": "click",
+      "target": "css=.wp-heading-inline > .page-title-action:nth-child(2)",
+      "targets": [
+        ["css=.wp-heading-inline > .page-title-action:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Add New')])[7]", "xpath:link"],
+        ["xpath=//div[@id='wpbody-content']/div[3]/h1/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'post-new.php?post_type=buddyforms')])[4]", "xpath:href"],
+        ["xpath=//h1/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a83d1af7-b6cb-4140-9b32-12a9a82d6ff0",
+      "comment": "",
+      "command": "click",
+      "target": "id=title-prompt-text",
+      "targets": [
+        ["id=title-prompt-text", "id"],
+        ["css=#title-prompt-text", "css:finder"],
+        ["xpath=//label[@id='title-prompt-text']", "xpath:attributes"],
+        ["xpath=//div[@id='titlewrap']/label", "xpath:idRelative"],
+        ["xpath=//label", "xpath:position"],
+        ["xpath=//label[contains(.,'Add title')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3a9ad224-307d-4b3c-8a0a-085799bbd5b9",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["name=post_title", "name"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='titlewrap']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "post form - basic"
+    }, {
+      "id": "a509ec28-b2b0-4caa-94f5-b5b3bcfaaf45",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Choose a pre-configured Form",
+      "targets": [
+        ["linkText=Choose a pre-configured Form", "linkText"],
+        ["css=.formbuilder-show-templates", "css:finder"],
+        ["xpath=//a[contains(text(),'Choose a pre-configured Form')]", "xpath:link"],
+        ["xpath=//div[@id='buddyforms_template_header_container_h3']/h3/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'javascript:void(0);')]", "xpath:href"],
+        ["xpath=//h3/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Choose a pre-configured Form')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3dd84f61-2e46-409f-a12c-0f67efe8ebb4",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=btn-compile-simple-post-form",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "26aa74ff-6790-4686-bf80-9914e6d21b21",
+      "comment": "",
+      "command": "click",
+      "target": "id=btn-compile-simple-post-form",
+      "targets": [
+        ["id=btn-compile-simple-post-form", "id"],
+        ["css=.bf-3-tile > #btn-compile-simple-post-form", "css:finder"],
+        ["xpath=//button[@id='btn-compile-simple-post-form']", "xpath:attributes"],
+        ["xpath=//div[@id='buddyforms_template_list_container']/div[11]/button", "xpath:idRelative"],
+        ["xpath=//div[11]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ac4ab7f-27a0-4f07-80f5-0be55b5a9296",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.field_name_text",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "68b7b874-8311-44b0-b1d1-5886d60494a6",
+      "comment": "",
+      "command": "click",
+      "target": "id=publish",
+      "targets": [
+        ["id=publish", "id"],
+        ["name=publish", "name"],
+        ["css=#publish", "css:finder"],
+        ["xpath=//input[@id='publish']", "xpath:attributes"],
+        ["xpath=//div[@id='publishing-action']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43210861-c535-46b3-bcdc-7394e8c2ee17",
+      "comment": "",
+      "command": "click",
+      "target": "id=ui-id-11",
+      "targets": [
+        ["id=ui-id-11", "id"],
+        ["linkText=Edit Submissions", "linkText"],
+        ["css=#ui-id-11", "css:finder"],
+        ["xpath=//a[contains(text(),'Edit Submissions')]", "xpath:link"],
+        ["xpath=//a[@id='ui-id-11']", "xpath:attributes"],
+        ["xpath=//div[@id='buddyforms_form_setup']/div/div/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#edit-submissions')]", "xpath:href"],
+        ["xpath=//div[3]/div/div[2]/div/div/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Edit Submissions')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eebc8495-f73d-49fa-b901-a81c01eb98c1",
+      "comment": "",
+      "command": "click",
+      "target": "id=bf_create_page_modal",
+      "targets": [
+        ["id=bf_create_page_modal", "id"],
+        ["linkText=Create a new Page", "linkText"],
+        ["css=#bf_create_page_modal", "css:finder"],
+        ["xpath=//a[contains(text(),'Create a new Page')]", "xpath:link"],
+        ["xpath=//a[@id='bf_create_page_modal']", "xpath:attributes"],
+        ["xpath=//div[@id='edit-submissions']/div/table/tbody/tr/td/p/b/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'javascript:void(0);')]", "xpath:href"],
+        ["xpath=//b/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Create a new Page ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "40722cb8-d4db-4b75-86f5-f1770f39fae7",
+      "comment": "",
+      "command": "click",
+      "target": "id=bf_create_page_name",
+      "targets": [
+        ["id=bf_create_page_name", "id"],
+        ["css=#bf_create_page_name", "css:finder"],
+        ["xpath=//input[@id='bf_create_page_name']", "xpath:attributes"],
+        ["xpath=//div[@id='ui-id-23']/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "114e25e2-32ef-4e77-9fc4-9c56cc7be2aa",
+      "comment": "",
+      "command": "type",
+      "target": "id=bf_create_page_name",
+      "targets": [
+        ["id=bf_create_page_name", "id"],
+        ["css=#bf_create_page_name", "css:finder"],
+        ["xpath=//input[@id='bf_create_page_name']", "xpath:attributes"],
+        ["xpath=//div[@id='ui-id-23']/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/input", "xpath:position"]
+      ],
+      "value": "post form - basic"
+    }, {
+      "id": "a4885249-afee-470d-9552-5585b9e336bb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ui-button-text:nth-child(1)",
+      "targets": [
+        ["css=.ui-button-text:nth-child(1)", "css:finder"],
+        ["xpath=//div[3]/div/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ebb5f0c9-ed1c-410d-9b96-8b6932e80d81",
+      "comment": "",
+      "command": "click",
+      "target": "id=poststuff",
+      "targets": [
+        ["id=poststuff", "id"],
+        ["css=#poststuff", "css:finder"],
+        ["xpath=//div[@id='poststuff']", "xpath:attributes"],
+        ["xpath=//form[@id='post']/div", "xpath:idRelative"],
+        ["xpath=//form/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "317178b3-b254-4b1f-bd5f-a1c0b4b0b8c7",
+      "comment": "",
+      "command": "click",
+      "target": "id=publish",
+      "targets": [
+        ["id=publish", "id"],
+        ["css=#publish", "css:finder"],
+        ["xpath=//input[@id='publish']", "xpath:attributes"],
+        ["xpath=//div[@id='publishing-action']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bec71146-4fba-49c9-961c-d62dbbe5a6da",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=The Form",
+      "targets": [
+        ["linkText=The Form", "linkText"],
+        ["css=.bf_button_action:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'The Form')]", "xpath:link"],
+        ["xpath=//div[@id='frontend-actions']/a[2]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://buddyforms.local/post-form-basic/create/post-form-basic/']", "xpath:href"],
+        ["xpath=//div[2]/div/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,' The Form')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win4392",
+      "windowTimeout": 2000
+    }, {
+      "id": "8b831a42-9b1d-477a-8720-a118b9e8a977",
+      "comment": "",
+      "command": "storeWindowHandle",
+      "target": "root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9474fa29-bfae-4917-b01f-3a59a6f07476",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win4392}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "09a9f1ac-6898-4e14-835f-b058f88e7aba",
+      "comment": "",
+      "command": "click",
+      "target": "id=buddyforms_form_title",
+      "targets": [
+        ["id=buddyforms_form_title", "id"],
+        ["name=buddyforms_form_title", "name"],
+        ["css=#buddyforms_form_title", "css:finder"],
+        ["xpath=//input[@id='buddyforms_form_title']", "xpath:attributes"],
+        ["xpath=//form[@id='buddyforms_form_post-form-basic']/fieldset/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d02ea20-3d02-4cfb-8048-727427d22a2b",
+      "comment": "",
+      "command": "type",
+      "target": "id=buddyforms_form_title",
+      "targets": [
+        ["id=buddyforms_form_title", "id"],
+        ["name=buddyforms_form_title", "name"],
+        ["css=#buddyforms_form_title", "css:finder"],
+        ["xpath=//input[@id='buddyforms_form_title']", "xpath:attributes"],
+        ["xpath=//form[@id='buddyforms_form_post-form-basic']/fieldset/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test entry"
+    }, {
+      "id": "03e471f8-00ca-47a0-baa1-122146e7b6b9",
+      "comment": "",
+      "command": "click",
+      "target": "css=#content > .wrap",
+      "targets": [
+        ["css=#content > .wrap", "css:finder"],
+        ["xpath=//div[@id='content']/div", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "51cfa821-e1d0-4265-b703-24f4f46a8b2d",
+      "comment": "",
+      "command": "click",
+      "target": "id=buddyforms_form_content",
+      "targets": [
+        ["id=buddyforms_form_content", "id"],
+        ["name=buddyforms_form_content", "name"],
+        ["css=#buddyforms_form_content", "css:finder"],
+        ["xpath=//textarea[@id='buddyforms_form_content']", "xpath:attributes"],
+        ["xpath=//div[@id='wp-buddyforms_form_content-editor-container']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6622bfd8-c328-4176-a2dc-7b05116f742c",
+      "comment": "",
+      "command": "type",
+      "target": "id=buddyforms_form_content",
+      "targets": [
+        ["id=buddyforms_form_content", "id"],
+        ["name=buddyforms_form_content", "name"],
+        ["css=#buddyforms_form_content", "css:finder"],
+        ["xpath=//textarea[@id='buddyforms_form_content']", "xpath:attributes"],
+        ["xpath=//div[@id='wp-buddyforms_form_content-editor-container']/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "test content"
+    }, {
+      "id": "a01a3321-1017-43d2-8455-5325ac36b23a",
+      "comment": "",
+      "command": "click",
+      "target": "css=#content > .wrap",
+      "targets": [
+        ["css=#content > .wrap", "css:finder"],
+        ["xpath=//div[@id='content']/div", "xpath:idRelative"],
+        ["xpath=//body/div/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5de95e0c-83f1-4ff8-b723-6a759de8ac21",
+      "comment": "",
+      "command": "click",
+      "target": "name=submitted",
+      "targets": [
+        ["id=post-form-basic", "id"],
+        ["name=submitted", "name"],
+        ["css=#post-form-basic", "css:finder"],
+        ["xpath=//button[@id='post-form-basic']", "xpath:attributes"],
+        ["xpath=//form[@id='buddyforms_form_post-form-basic']/fieldset/div[6]/button", "xpath:idRelative"],
+        ["xpath=//div[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba624bd3-cab3-4fb7-843f-ffbc0ceaface",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e0e5ad1-fc10-4604-b06f-e7877c0d5482",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${root}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e4c31e41-c089-482f-97ec-861672ce6087",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Your Submissions",
+      "targets": [
+        ["linkText=Your Submissions", "linkText"],
+        ["css=#frontend-actions > .button:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Your Submissions')]", "xpath:link"],
+        ["xpath=(//div[@id='frontend-actions']/a)[2]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://buddyforms.local/post-form-basic/view/post-form-basic/']", "xpath:href"],
+        ["xpath=//div[4]/div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,' Your Submissions')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win5432",
+      "windowTimeout": 2000
+    }, {
+      "id": "7c93f499-6b56-490e-9c93-168f7583f40f",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win5432}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a4628cf1-f85d-4091-98ca-bccbb934d00e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.item-title",
+      "targets": [
+        ["css=.item-title", "css:finder"],
+        ["xpath=//li[@id='bf_post_li_1106']/div/div[2]", "xpath:idRelative"],
+        ["xpath=//li/div/div[2]", "xpath:position"]
+      ],
+      "value": "test entry"
+    }, {
+      "id": "a5d3e075-a822-45b7-a586-80f85a9e49fa",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.bf_edit_post",
+      "targets": [
+        ["css=.meta", "css:finder"],
+        ["xpath=//li[@id='bf_post_li_1106']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//li/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "36f18e1e-26dd-4532-a14b-689e4093fcb6",
+    "name": "contact form - basic",
+    "commands": [{
+      "id": "dd3db341-a899-424d-804e-7081b0efd16c",
+      "comment": "",
+      "command": "open",
+      "target": "https://buddyforms-premium.appscidentally.com/wp-admin/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "95b5b15a-de60-4884-b814-accba76894cd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x1362",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d4963e01-09db-4db1-ade4-e5c8abfbbe7f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.toplevel_page_wpml_plugin_log > .wp-menu-name",
+      "targets": [
+        ["css=.toplevel_page_wpml_plugin_log > .wp-menu-name", "css:finder"],
+        ["xpath=//li[@id='toplevel_page_wpml_plugin_log']/a/div[3]", "xpath:idRelative"],
+        ["xpath=//li[20]/a/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f9b1501-574a-48da-9db0-bc682c62494c",
+      "comment": "",
+      "command": "storeXpathCount",
+      "target": "xpath=//select[@id='bulk-action-selector-top']",
+      "targets": [],
+      "value": "present"
+    }, {
+      "id": "6a30b014-6fba-49f9-906f-7c1e4657c404",
+      "comment": "",
+      "command": "if",
+      "target": "${present} > 0",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9602456f-a7aa-486f-96eb-645bbe92e5d4",
+      "comment": "",
+      "command": "click",
+      "target": "id=bulk-action-selector-top",
+      "targets": [
+        ["id=bulk-action-selector-top", "id"],
+        ["name=action", "name"],
+        ["css=#bulk-action-selector-top", "css:finder"],
+        ["xpath=//select[@id='bulk-action-selector-top']", "xpath:attributes"],
+        ["xpath=//form[@id='email-list']/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc33e8a0-f312-4ea9-8053-b3cd17397df8",
+      "comment": "",
+      "command": "select",
+      "target": "id=bulk-action-selector-top",
+      "targets": [],
+      "value": "label=Delete"
+    }, {
+      "id": "2ce947f3-12e8-4f63-b01d-ead04af45ca7",
+      "comment": "",
+      "command": "click",
+      "target": "id=cb-select-all-1",
+      "targets": [
+        ["id=cb-select-all-1", "id"],
+        ["css=#cb-select-all-1", "css:finder"],
+        ["xpath=//input[@id='cb-select-all-1']", "xpath:attributes"],
+        ["xpath=//td[@id='cb']/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34609feb-08b8-4059-a845-7e09863ae446",
+      "comment": "",
+      "command": "click",
+      "target": "id=doaction",
+      "targets": [
+        ["id=doaction", "id"],
+        ["css=#doaction", "css:finder"],
+        ["xpath=//input[@id='doaction']", "xpath:attributes"],
+        ["xpath=//form[@id='email-list']/div/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "909e2e94-3cd4-4c92-b700-1ed21f1d515b",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6920331-d5f6-40f9-b213-77833774ddfd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.menu-icon-buddyforms > .wp-menu-name",
+      "targets": [
+        ["css=.menu-icon-buddyforms > .wp-menu-name", "css:finder"],
+        ["xpath=//li[@id='menu-posts-buddyforms']/a/div[3]", "xpath:idRelative"],
+        ["xpath=//li[7]/a/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f06c127e-e034-4f1b-b145-f1340b6d4b24",
+      "comment": "",
+      "command": "click",
+      "target": "css=.wp-heading-inline > .page-title-action:nth-child(2)",
+      "targets": [
+        ["css=.wp-heading-inline > .page-title-action:nth-child(2)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Add New')])[8]", "xpath:link"],
+        ["xpath=//div[@id='wpbody-content']/div[4]/h1/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'post-new.php?post_type=buddyforms')])[4]", "xpath:href"],
+        ["xpath=//h1/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "229295ba-155c-4d79-a7d3-b06f01366b53",
+      "comment": "",
+      "command": "click",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["name=post_title", "name"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='titlewrap']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "df6be879-36c0-4cba-ad87-11932596f7a2",
+      "comment": "",
+      "command": "type",
+      "target": "id=title",
+      "targets": [
+        ["id=title", "id"],
+        ["name=post_title", "name"],
+        ["css=#title", "css:finder"],
+        ["xpath=//input[@id='title']", "xpath:attributes"],
+        ["xpath=//div[@id='titlewrap']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "contact form - basic"
+    }, {
+      "id": "f016d943-2bbb-471a-aa58-048bb548fb0e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Choose a pre-configured Form",
+      "targets": [
+        ["linkText=Choose a pre-configured Form", "linkText"],
+        ["css=.formbuilder-show-templates", "css:finder"],
+        ["xpath=//a[contains(text(),'Choose a pre-configured Form')]", "xpath:link"],
+        ["xpath=//div[@id='buddyforms_template_header_container_h3']/h3/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'javascript:void(0);')]", "xpath:href"],
+        ["xpath=//h3/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Choose a pre-configured Form')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "42ac8b6b-c044-4527-91b4-68bb731d4613",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=btn-compile-simple-post-form",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "d9154f64-841c-4df4-89c3-b2b25c99fb1a",
+      "comment": "",
+      "command": "click",
+      "target": "id=btn-compile-simple-contact-form",
+      "targets": [
+        ["id=btn-compile-simple-contact-form", "id"],
+        ["css=.bf-3-tile > #btn-compile-simple-contact-form", "css:finder"],
+        ["xpath=//button[@id='btn-compile-simple-contact-form']", "xpath:attributes"],
+        ["xpath=//div[@id='buddyforms_template_list_container']/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49574f2c-c3de-47b3-84e2-b977685bfa65",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.field_name_text",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "3b4127dc-7e8c-45e5-abd5-d47c62fcb673",
+      "comment": "",
+      "command": "click",
+      "target": "id=ui-id-3",
+      "targets": [
+        ["id=ui-id-3", "id"],
+        ["linkText=View Submissions", "linkText"],
+        ["css=#ui-id-3", "css:finder"],
+        ["xpath=//a[contains(text(),'View Submissions')]", "xpath:link"],
+        ["xpath=//a[@id='ui-id-3']", "xpath:attributes"],
+        ["xpath=//div[@id='buddyforms_form_setup']/div/div/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#edit-submissions')]", "xpath:href"],
+        ["xpath=//div[3]/div/div[2]/div/div/ul/li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'View Submissions')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "798b3377-e4f6-482a-afda-a7fb5639887a",
+      "comment": "",
+      "command": "click",
+      "target": "id=ui-id-4",
+      "targets": [
+        ["id=ui-id-4", "id"],
+        ["linkText=Notifications", "linkText"],
+        ["css=#ui-id-4", "css:finder"],
+        ["xpath=//a[contains(text(),'Notifications')]", "xpath:link"],
+        ["xpath=//a[@id='ui-id-4']", "xpath:attributes"],
+        ["xpath=//div[@id='buddyforms_form_setup']/div/div/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#notification')]", "xpath:href"],
+        ["xpath=//div[3]/div/div[2]/div/div/ul/li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Notifications')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4cd557e-eec9-46b1-b7d6-612c52830acc",
+      "comment": "",
+      "command": "click",
+      "target": "id=publish",
+      "targets": [
+        ["id=publish", "id"],
+        ["name=publish", "name"],
+        ["css=#publish", "css:finder"],
+        ["xpath=//input[@id='publish']", "xpath:attributes"],
+        ["xpath=//div[@id='publishing-action']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5119c493-b6e4-4dc3-a575-86ecad97d6a5",
+      "comment": "",
+      "command": "click",
+      "target": "id=ui-id-16",
+      "targets": [
+        ["id=ui-id-16", "id"],
+        ["linkText=Notifications", "linkText"],
+        ["css=#ui-id-16", "css:finder"],
+        ["xpath=//a[contains(text(),'Notifications')]", "xpath:link"],
+        ["xpath=//a[@id='ui-id-16']", "xpath:attributes"],
+        ["xpath=//div[@id='buddyforms_form_setup']/div/div/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#notification')]", "xpath:href"],
+        ["xpath=//div[3]/div/div[2]/div/div/ul/li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Notifications')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6407c11a-6d3e-46ed-a485-87b3117de24e",
+      "comment": "",
+      "command": "click",
+      "target": "css=#ui-id-27 .field_order",
+      "targets": [
+        ["css=#ui-id-27 .field_order", "css:finder"],
+        ["xpath=//div[@id='ui-id-27']/table/tbody/tr/td", "xpath:idRelative"],
+        ["xpath=//div[4]/div/ul/li/div/div/div/table/tbody/tr/td", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e13fd415-cb41-46ca-81e1-c163ae959816",
+      "comment": "",
+      "command": "click",
+      "target": "id=publish",
+      "targets": [
+        ["id=publish", "id"],
+        ["css=#publish", "css:finder"],
+        ["xpath=//input[@id='publish']", "xpath:attributes"],
+        ["xpath=//div[@id='publishing-action']/input[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9b1af5f-cc7d-473a-8968-4f46f29afbc5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=The Form",
+      "targets": [
+        ["linkText=The Form", "linkText"],
+        ["css=.bf_button_action:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'The Form')]", "xpath:link"],
+        ["xpath=//div[@id='frontend-actions']/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://buddyforms-premium.appscidentally.com/buddyform-default-submission-page/create/contact-form-basic/')]", "xpath:href"],
+        ["xpath=//div[2]/div/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,' The Form')]", "xpath:innerText"]
+      ],
+      "value": "",
+      "opensWindow": true,
+      "windowHandleName": "win5655",
+      "windowTimeout": 2000
+    }, {
+      "id": "48b96db5-b976-4ab0-9c41-8def580562ec",
+      "comment": "",
+      "command": "storeWindowHandle",
+      "target": "root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a26a32b6-eeb2-48c9-8eba-933cf409a05c",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${win5655}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cb123679-9c89-43fb-a776-1cc638469276",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-xs-12:nth-child(12)",
+      "targets": [
+        ["css=.col-xs-12:nth-child(12)", "css:finder"],
+        ["xpath=//form[@id='buddyforms_form_contact-form-basic']/fieldset/div[4]", "xpath:idRelative"],
+        ["xpath=//div[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f919c7c-8b5e-4fdf-b704-e5835995339e",
+      "comment": "",
+      "command": "click",
+      "target": "id=user_first",
+      "targets": [
+        ["id=user_first", "id"],
+        ["name=user_first", "name"],
+        ["css=#user_first", "css:finder"],
+        ["xpath=//input[@id='user_first']", "xpath:attributes"],
+        ["xpath=//form[@id='buddyforms_form_contact-form-basic']/fieldset/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "acc28be0-de4e-4d86-ad56-41d2440bed4c",
+      "comment": "",
+      "command": "type",
+      "target": "id=user_first",
+      "targets": [
+        ["id=user_first", "id"],
+        ["name=user_first", "name"],
+        ["css=#user_first", "css:finder"],
+        ["xpath=//input[@id='user_first']", "xpath:attributes"],
+        ["xpath=//form[@id='buddyforms_form_contact-form-basic']/fieldset/div[4]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "name 1"
+    }, {
+      "id": "56d95915-1670-479e-8b0b-c943abcbefff",
+      "comment": "",
+      "command": "type",
+      "target": "id=user_email",
+      "targets": [
+        ["id=user_email", "id"],
+        ["name=user_email", "name"],
+        ["css=#user_email", "css:finder"],
+        ["xpath=//input[@id='user_email']", "xpath:attributes"],
+        ["xpath=//form[@id='buddyforms_form_contact-form-basic']/fieldset/div[5]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/input", "xpath:position"]
+      ],
+      "value": "name@test.com"
+    }, {
+      "id": "aa57b656-8f3f-4510-8a19-fdf399331269",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-xs-12:nth-child(14)",
+      "targets": [
+        ["css=.col-xs-12:nth-child(14)", "css:finder"],
+        ["xpath=//form[@id='buddyforms_form_contact-form-basic']/fieldset/div[6]", "xpath:idRelative"],
+        ["xpath=//div[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9367538-a12c-45d3-b777-ac130929d4c6",
+      "comment": "",
+      "command": "click",
+      "target": "id=message",
+      "targets": [
+        ["id=message", "id"],
+        ["name=message", "name"],
+        ["css=#message", "css:finder"],
+        ["xpath=//textarea[@id='message']", "xpath:attributes"],
+        ["xpath=//form[@id='buddyforms_form_contact-form-basic']/fieldset/div[6]/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "06126993-ed8a-4ca3-afb9-66f7d337133c",
+      "comment": "",
+      "command": "type",
+      "target": "id=message",
+      "targets": [
+        ["id=message", "id"],
+        ["name=message", "name"],
+        ["css=#message", "css:finder"],
+        ["xpath=//textarea[@id='message']", "xpath:attributes"],
+        ["xpath=//form[@id='buddyforms_form_contact-form-basic']/fieldset/div[6]/div/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "lorem ipsum"
+    }, {
+      "id": "903ea18b-8556-4a8d-8b90-e179bc708068",
+      "comment": "",
+      "command": "click",
+      "target": "name=submitted",
+      "targets": [
+        ["id=contact-form-basic-2", "id"],
+        ["name=submitted", "name"],
+        ["css=#contact-form-basic-2", "css:finder"],
+        ["xpath=//button[@id='contact-form-basic-2']", "xpath:attributes"],
+        ["xpath=//form[@id='buddyforms_form_contact-form-basic-2']/fieldset/div[7]/button", "xpath:idRelative"],
+        ["xpath=//div[7]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'SEND')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab0acf5b-0819-4f87-ac63-475c00b0738c",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d2a83d5-a205-4008-8e70-33c72ed577cd",
+      "comment": "",
+      "command": "selectWindow",
+      "target": "handle=${root}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "61440a13-6fad-4300-a9f6-955a4ff6a801",
+      "comment": "",
+      "command": "click",
+      "target": "css=#admin-actions > .button",
+      "targets": [
+        ["css=#admin-actions > .button", "css:finder"],
+        ["xpath=(//a[contains(text(),'Submissions')])[3]", "xpath:link"],
+        ["xpath=//div[@id='admin-actions']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'edit.php?post_type=buddyforms&page=buddyforms_submissions&form_slug=contact-form-basic')]", "xpath:href"],
+        ["xpath=//div[4]/div[3]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f2b9797-d673-4ea9-bcbc-0225baa629ea",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.user_first",
+      "targets": [
+        ["css=.user_first", "css:finder"],
+        ["xpath=//tbody[@id='the-list']/tr/td[4]", "xpath:idRelative"],
+        ["xpath=//td[4]", "xpath:position"],
+        ["xpath=//td[contains(.,'name 1')]", "xpath:innerText"]
+      ],
+      "value": "name 1"
+    }, {
+      "id": "78a899e8-fb4b-491b-becd-7bbc73527051",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.user_email",
+      "targets": [
+        ["css=.user_email", "css:finder"],
+        ["xpath=//tbody[@id='the-list']/tr/td[5]", "xpath:idRelative"],
+        ["xpath=//td[5]", "xpath:position"],
+        ["xpath=//td[contains(.,'name@test.com')]", "xpath:innerText"]
+      ],
+      "value": "name@test.com"
+    }, {
+      "id": "40129e00-ece8-4400-836b-110753ca93bb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.message",
+      "targets": [
+        ["css=.message", "css:finder"],
+        ["xpath=//tbody[@id='the-list']/tr/td[6]", "xpath:idRelative"],
+        ["xpath=//td[6]", "xpath:position"],
+        ["xpath=//td[contains(.,'lorem ipsum')]", "xpath:innerText"]
+      ],
+      "value": "lorem ipsum"
+    }, {
+      "id": "2e58f52f-095d-4ede-a0c7-cbb9d2c95c82",
+      "comment": "",
+      "command": "click",
+      "target": "css=.toplevel_page_wpml_plugin_log > .wp-menu-name",
+      "targets": [
+        ["css=.toplevel_page_wpml_plugin_log > .wp-menu-name", "css:finder"],
+        ["xpath=//li[@id='toplevel_page_wpml_plugin_log']/a/div[3]", "xpath:idRelative"],
+        ["xpath=//li[20]/a/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbd2edac-1a85-4fc1-be19-afe011cb3b8f",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.subject",
+      "targets": [
+        ["css=.subject", "css:finder"],
+        ["xpath=//tbody[@id='the-list']/tr/td[4]", "xpath:idRelative"],
+        ["xpath=//td[4]", "xpath:position"],
+        ["xpath=//td[contains(.,'Contact Form Submission')]", "xpath:innerText"]
+      ],
+      "value": "Contact Form Submission"
+    }, {
+      "id": "1efc038f-3c83-4ad5-9510-4afd093955ad",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=View",
+      "targets": [
+        ["linkText=View", "linkText"],
+        ["css=.wp-mail-logging-view-message", "css:finder"],
+        ["xpath=(//a[contains(text(),'View')])[2]", "xpath:link"],
+        ["xpath=//tbody[@id='the-list']/tr/td[5]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[7]", "xpath:href"],
+        ["xpath=//td[5]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34df2f93-8ae8-4de9-aebb-55738a6c38a6",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "//*[@id=\"wp-mail-logging-modal-content-body-content\"]/span[1]",
+      "targets": [
+        ["id=wp-mail-logging-modal-content-body-content", "id"],
+        ["css=#wp-mail-logging-modal-content-body-content", "css:finder"],
+        ["xpath=//div[@id='wp-mail-logging-modal-content-body-content']", "xpath:attributes"],
+        ["xpath=//div[@id='wp-mail-logging-modal-content-body']/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div[2]/div/div[2]/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "9599c1b8-a6e7-4de0-ab3d-e6af94000dfc",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)",
+      "targets": [
+        ["css=tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='wp-mail-logging-modal-content-body-content']/table/tbody/tr/td[2]", "xpath:idRelative"],
+        ["xpath=//td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'name 1')]", "xpath:innerText"]
+      ],
+      "value": "name 1"
+    }, {
+      "id": "f1f7da89-8d74-4924-8c7f-f337f396ca26",
       "comment": "",
       "command": "assertText",
       "target": "css=tr:nth-child(2) > td:nth-child(2)",
       "targets": [
         ["css=tr:nth-child(2) > td:nth-child(2)", "css:finder"],
-        ["xpath=//tr[2]/td[2]", "xpath:position"]
+        ["xpath=//div[@id='wp-mail-logging-modal-content-body-content']/table/tbody/tr[2]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[2]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'name@test.com')]", "xpath:innerText"]
       ],
-      "value": "test content"
+      "value": "name@test.com"
     }]
   }],
   "suites": [{
@@ -764,7 +1763,28 @@
     "parallel": false,
     "timeout": 300,
     "tests": []
+  }, {
+    "id": "48559b99-0168-4b1f-b4f8-67351b77d7f3",
+    "name": "Post Form",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["b0317870-7cec-489e-a0a0-a90e14113e13", "3591a51e-d928-44b9-9ba0-7f452d3f4038", "1a6a8bfd-81d6-4c78-8c40-cfae07b6d557"]
+  }, {
+    "id": "a382414b-1e4e-4411-89f4-b6ec01e3a273",
+    "name": "Contact Form",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["36f18e1e-26dd-4532-a14b-689e4093fcb6"]
+  }, {
+    "id": "76ffebc6-af7d-4de9-820a-4ef80ba4132e",
+    "name": "Registration Form",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
   }],
-  "urls": ["http://buddyforms.local/wp-admin"],
+  "urls": ["http://buddyforms.local/wp-admin", "https://buddyforms-premium.appscidentally.com/wp-admin"],
   "plugins": []
 }
